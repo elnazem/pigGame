@@ -25,8 +25,6 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
             const roundPlayer=changeRound(activePlayer);
             roundScore=roundPlayer[0];
             activePlayer=roundPlayer[1];
-    
-    
         }
     
     
@@ -37,15 +35,15 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
 });
 
 document.querySelector('.btn-hold').addEventListener('click',function(){
+   if(gamePlaying){
     scores=updateScore(activePlayer,roundScore,scores);
-    
     if(!terminateCheck(scores,activePlayer)){
         const roundPlayer=changeRound(activePlayer);
         roundScore=roundPlayer[0];
         activePlayer=roundPlayer[1];
     }
     hideDice();
-
+   } 
 });
 document.querySelector('.btn-new').addEventListener( 'click',initalizeGame
 );
@@ -108,6 +106,7 @@ function terminateCheck(scores,activePlayer) {
         document.querySelector('#name-' + activePlayer).textContent = 'Winner!';
         document.querySelector('.player-'+activePlayer+'-panel').classList.add('winner');
         document.querySelector('.player-'+activePlayer+'-panel').classList.remove('active');
+        gamePlaying=false;
         return true;
     }
     return false;
