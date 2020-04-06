@@ -142,12 +142,13 @@ i {
     position: absolute;
     top: 103px;
     width: 150px;
-    left: 43%;
+    left: 50%;
+    transform: translateX(-50%);
 
     font-weight: 300px;
     text-transform: uppercase;
     line-height: 1.5rem;
-
+    font-family: 'Lato';
     margin: 1em auto;
     background-color: #F7F7F7;
     box-shadow: 0.2px 0.2px 2px #888888;
@@ -156,16 +157,22 @@ i {
 .winNum{
     width: 100px;
     padding: 0.2em;
-    border-radius:5px;
+    text-align: center;
 
+}
+.winNum:focus{
+    outline: none;
 }
 .winSubmit{
     width: 80px;
-    color: #F7F7F7;
-    background-color: #EB4D4D;
-    padding: 0.3em;
-    border-radius:20px;
+    box-shadow: none;
+    background-color: white ;
+    padding: 0.5em;
+    border:solid 1px #888888;
+    border-radius:3px;
+
     text-transform:uppercase;
+    color: #555;
 
 
 }
@@ -173,6 +180,10 @@ i {
     display: block;
     margin:10px auto;
 
+}
+.winSubmit:hover{
+    color:#f7f7f7;
+    background-color:#EB4D4D ;
 }
 .btn-roll { top: 403px;}
 .btn-hold { top: 467px;}

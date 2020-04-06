@@ -25,12 +25,13 @@ document.getElementById('scoreForm').addEventListener('submit',function(e){
 document.querySelector('.btn-roll').addEventListener('click',function(){
     if(gamePlaying){
         var rand = randomScore();
-        if(rand===preScore===6 || rand===1){
+        if((rand===6 && preScore===6 )|| rand===1){
             roundScore=0;
             scores=updateScore(activePlayer,roundScore,scores);
             const roundPlayer=changeRound(activePlayer);
             roundScore=roundPlayer[0];
             activePlayer=roundPlayer[1];
+            return;
         }
         else{
             //add number
