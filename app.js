@@ -25,16 +25,17 @@ document.getElementById('scoreForm').addEventListener('submit',function(e){
 document.querySelector('.btn-roll').addEventListener('click',function(){
     if(gamePlaying){
         var rand = randomScore();
-        if(rand>1 && rand!==preScore){
-            //add number
-            roundScore=changeCurrentScore(rand);
-    
-        }else{
+        if(rand===preScore===6 || rand===1){
             roundScore=0;
             scores=updateScore(activePlayer,roundScore,scores);
             const roundPlayer=changeRound(activePlayer);
             roundScore=roundPlayer[0];
             activePlayer=roundPlayer[1];
+        }
+        else{
+            //add number
+            roundScore=changeCurrentScore(rand);
+    
         }
         preScore=rand;
     
@@ -43,6 +44,7 @@ document.querySelector('.btn-roll').addEventListener('click',function(){
 
 
 });
+   
 
 document.querySelector('.btn-hold').addEventListener('click',function(){
    if(gamePlaying){
